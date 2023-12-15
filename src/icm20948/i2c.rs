@@ -249,7 +249,7 @@ where
         self.bus
             .write_read(self.addr, &self.databuf[0..1], &mut buf[1..2])?;
 
-        Ok((((buf[0] as i16) << 8) | (buf[1] as i16)) as f32 / self.accel_sen as f32)
+        Ok((((buf[0] as i16) << 8) | (buf[1] as i16)) as f32 / self.gyro_sen as f32)
     }
 
     /// Gets the gyro reading in the Y direction.
@@ -267,7 +267,7 @@ where
         self.bus
             .write_read(self.addr, &self.databuf[0..1], &mut buf[1..2])?;
 
-        Ok((((buf[0] as i16) << 8) | (buf[1] as i16)) as f32 / self.accel_sen as f32)
+        Ok((((buf[0] as i16) << 8) | (buf[1] as i16)) as f32 / self.gyro_sen as f32)
     }
 
     /// Gets the gyro reading in the Z direction.
@@ -285,7 +285,7 @@ where
         self.bus
             .write_read(self.addr, &self.databuf[0..1], &mut buf[1..2])?;
 
-        Ok((((buf[0] as i16) << 8) | (buf[1] as i16)) as f32 / self.accel_sen as f32)
+        Ok((((buf[0] as i16) << 8) | (buf[1] as i16)) as f32 / self.gyro_sen as f32)
     }
 
     /// Reads all three gyro values and returns them as an array.
